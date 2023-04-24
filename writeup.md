@@ -6,7 +6,7 @@ Once all 3 hidden messages/flags are found, we wrap them in CTF_SDaT{} to get th
 
 ## The Hidden Messages:
 
-### 1. String.html
+### 1. string.html
 
 This webpage has nothing but an image, `string.jpg`,  and some text below it. Naturally, you can run `strings string.jpg` to find a hidden message within the image binary:
 
