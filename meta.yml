@@ -1,0 +1,24 @@
+name: Stego 101
+description: |
+  This is a simple challenge thats tasks you with finding 3 hidden flags hidden in 3 static html webpages. All of the flags are hidden somewhere within the images or files found on the website 
+
+  **Connection Instructions**:
+  
+  Do the following:
+
+  $ `ssh -L localhost:<local port>:stego-101:8080 -p 56151 <username>@cs561.cs.umass.edu`
+
+  For example, run
+
+  $ `ssh -L localhost:8080:stego-101:8080 -p 56151 user@cs561.cs.umass.edu`
+
+  this will forward port 8080 on your local machine to the docker container `stego-101:80801 on the swarm network. Now you can open your browser and navigate to `http://localhost:8080` to access the challenge website.
+  
+  The website contains a homepage, and pages for flag 1, flag 2, and flag 3. concatenate the 3 flags in order and wrap them in CTF_SDaT{...} to get your final answer. 
+
+value: 100
+category: Web
+flag: CTF_SDaT{FL1_y4rNFL2_stegoH0l3_in_0Ne}
+
+# administrative
+container_name:stego-101
