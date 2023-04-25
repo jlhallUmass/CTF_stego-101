@@ -12,7 +12,7 @@ description: |
 
   $ `ssh -L localhost:8080:stego-101:8080 -p 56151 user@cs561.cs.umass.edu`
 
-  this will forward port 8080 on your local machine to the docker container `stego-101:80801 on the swarm network. Now you can open your browser and navigate to `http://localhost:8080` to access the challenge website.
+  this will forward port 8080 on your local machine to the docker container `stego-101:8080 on the swarm network. Now you can open your browser and navigate to `http://localhost:8080` to access the challenge website.
   
   The website contains a homepage, and pages for flag 1, flag 2, and flag 3. concatenate the 3 flags in order and wrap them in CTF_SDaT{...} to get your final answer. 
 
