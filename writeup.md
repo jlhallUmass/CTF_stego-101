@@ -1,4 +1,4 @@
-﻿# Stego 101 Solution
+# Stego 101 Solution
 
 This CTF challenge is fairly simple. There are three different messages stored inside an image or a .sav file on each of the challenge webpages. They are hidden in varying degrees of complexity, but I wouldn't consider them extremely difficult to find.
 
@@ -21,12 +21,12 @@ So the first Flag is `FL1_y4rN`
 
 ### 2. bell.html
 
-This webpage has a image of a bell, `bell.jpg` and a button to ring it. This time, the flag is hidden within the 
+This webpage has an image of a bell, `bell.jpg` and a button to ring it. This time, the flag is hidden within the 
 .wav file that plays when you click the button.
 
-First step is finding the sound file. Analyzing the code will show that the webpage's button calls a ringBell() function from the bell.js javascript file. If you look at that file, you will see it creates its Audio object from `/sounds/bell.wav`. If you navigate to `https://localhost:<port>/sounds/bell.wav`, you will be able to find a direct link and download to the wav file. (Alternatively, you can look at the network monitor in chrome to find a link to `bell.wav`.
+The first step is finding the sound file. Analyzing the code will show that the webpage's button calls a ringBell() function from the bell.js javascript file. If you look at that file, you will see it creates its Audio object from `/sounds/bell.wav`. If you navigate to `https://localhost:<port>/sounds/bell.wav`, you will be able to find a direct link and download to the wav file. (Alternatively, you can look at the network monitor in chrome to find a link to `bell.wav`.
 
-The flag was hidden in this file using `steghide` with no password (NOTE: there is a hint here. if you observer the metadata for the audio file, you will find a reference to steghide). If you run `steghide extract -sf bell.wav`, you will find the next flag:
+The flag was hidden in this file using `steghide` with no password (NOTE: there is a hint here. If you observe the metadata for the audio file, you will find a reference to steghide). If you run `steghide extract -sf bell.wav`, you will find the next flag:
 ```
 $ steghide extract -sf bell.wav -xf -
 Enter passphrase: 
